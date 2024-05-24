@@ -22,6 +22,8 @@ isPasswordCorrect("abc").then((result) => {
 
 // TODO: Latihan Promise Asynchronus
 // 1. Pengecekan email dan password
+// correct email = "roby@gmail.com"
+// correct password = "abcde"
 // case 3:
 // 1. Berhasil email dan password benar
 // 2. Gagal email benar, password salah
