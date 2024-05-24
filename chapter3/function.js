@@ -33,4 +33,6 @@ function menyapa(nama) {
 // console.log("Hasil perkalian salah: ", perkalian(3, "aku"));
 // console.log("Hasil penjumlahan dan perkalian 2: ", jumlahDanKaliDua(3, 5));
 // console.log("Hasil square: ", square(9));
-console.log(menyapa("Ismail"));
+const sapaIsmail = menyapa("Ismail");
+
+console.log(sapaIsmail + ". Selamat belajar!");

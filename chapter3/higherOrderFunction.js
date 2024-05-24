@@ -6,6 +6,26 @@ const programmingLanguages = ["js", "php", "python"];
 // }
 
 // function forEach
-programmingLanguages.forEach(language => {
-  console.log("Language: " + language)
+// programmingLanguages.forEach(language => {
+//   if (language == "python") {
+//     console.log("Language: " + language)
+//   } else {
+//     console.log("not python")
+//   }
+// })
+
+function forEach(array, callback) {
+  const newArr = [];
+
+  for (var i = 0; i < array.length; i++) {
+    newArr.push(callback(array[i]))
+  }
+
+  return newArr;
+}
+
+const lenArr = forEach(programmingLanguages, function (pl) {
+  return "language: " + pl;
 })
+
+console.log(lenArr);
