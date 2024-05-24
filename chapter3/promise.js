@@ -19,3 +19,11 @@ isPasswordCorrect("abc").then((result) => {
 }).catch((err) => {
   console.log(err);
 });
+
+// TODO: Latihan Promise Asynchronus
+// 1. Pengecekan email dan password
+// case 3:
+// 1. Berhasil email dan password benar
+// 2. Gagal email benar, password salah
+// 3. Gagal email salah, password benar
+// 4. Gagal email salah, password salah
