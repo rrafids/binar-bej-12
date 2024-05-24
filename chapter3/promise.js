@@ -24,7 +24,7 @@ isPasswordCorrect("abc").then((result) => {
 // 1. Pengecekan email dan password
 // correct email = "roby@gmail.com"
 // correct password = "abcde"
-// case 3:
+// case 4:
 // 1. Berhasil email dan password benar
 // 2. Gagal email benar, password salah
 // 3. Gagal email salah, password benar
