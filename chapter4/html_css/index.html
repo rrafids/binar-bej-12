@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<htmld>
+  <head>
+    <title>Login ke Google</title>
+
+    <!-- !Info: external stylesheet -->
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+
+    <!-- !Info: internal stylesheet -->
+    <style>
+      h1 {
+        color: green;
+      }
+
+      p {
+        font-weight: bold;
+        color: lightblue;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="color: red">&quot;Google.com&quot;</h1>
+    <h3>Aku &amp; dia</h3>
+    <h3>Aku &lt;/&gt; dia</h3>
+    <p>Halo ini tag paragraf</p>
+
+    <!-- Form login -->
+    <form id="login-form" style="background-color: gray">
+      <input placeholder="email" type="text" />
+      <input placeholder="password" type="password" />
+      <button type="button">Login</button>
+      <butto type="reset">Reset</butto>
+      <button type="submit">Submit</button>
+      <img src="'cat'.webp" />
+      <!-- !TODO: tambah tag p yang contentnya adalah halo from javascript -->
+    </form>
+    <!-- Frontend request ke backend -->
+    <!-- Backend ngasih response ke frontend -->
+    <!-- Response: berhasil / gagal -->
+    <!-- Tampilkan response -->
+  </body>
+
+  <script src="script.js"></script>
+
+  <script>
+    console.log('Halo aku js di html');
+    const loginForm = document.getElementById('login-form');
+
+    const tagP = document.createElement('p');
+    tagP.innerText = 'Halo from js!!!';
+
+    loginForm.appendChild(tagP);
+
+    console.log(loginForm);
+  </script>
+</htmld>
