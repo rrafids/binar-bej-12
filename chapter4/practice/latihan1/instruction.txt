@@ -1,0 +1,3 @@
+1. Buat project nodejs baru
+2. Mengisi project sesuai dengan struktur latihan 1
+3. Pastikan fungsi jalan ketika dipanggil
