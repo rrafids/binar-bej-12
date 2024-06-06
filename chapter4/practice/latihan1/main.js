@@ -1,4 +1,4 @@
-users = [
+const users = [
   {
     name: "Jono",
     email: "jono@binar.com",
@@ -22,4 +22,4 @@ const userToLogin = {
   password: "abby123"
 }
 
-console.log("[userService] login(): ", JSON.stringify(userService.login(userToLogin)))
+console.log("[userService] login(): ", JSON.stringify(userService.login(userToLogin)));
