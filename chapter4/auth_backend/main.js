@@ -14,6 +14,8 @@ const userService = new UserService(userRepository);
 const userHandler = new UserHandler(userService);
 
 app.get('/users', userHandler.getAll);
+app.get('/users/:email', userHandler.getByEmail);
+
 app.post('/login', userHandler.login);
 app.post('/register', userHandler.register);
 

@@ -19,6 +19,10 @@ class UserRepository {
   getAll() {
     return this.users;
   }
+
+  getByEmail(email) {
+    return this.users.find(user => user.email === email)
+  }
 }
 
 module.exports = UserRepository;
