@@ -1,8 +1,9 @@
-const userRepository = require('../repository/userRepository');
+const UserRepository = require('../repository/userRepository');
+const ProductService = require('../repository/productService');
 
 class UserService {
   constructor() {
-    this.userRepository = userRepository;
+    this.userRepository = new UserRepository();
   }
 
   register({ name, email, password }) {
@@ -10,6 +11,7 @@ class UserService {
     // 1. Lakukan penambahan data user kedalam database (melalui class repository)
     // 2. Pastikan untuk mengecek apakah email sudah terdaftar atau belum, jika sudah terdaftar, kembalikan error
     // 3. Jika berhasil kembalikan data user yang sudah berhasil ditambahkan
+    this.userRepository.getAll()
   }
 
   login({ email, password }) {
