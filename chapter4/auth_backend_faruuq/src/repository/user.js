@@ -17,12 +17,10 @@ class UserRepository {
   }
 
   getAll = () => {
-    console.log(">>> getAll")
     return this.users
   }
 
   getByEmail = (email) => {
-    console.log(">>> getByEmail")
     return this.users.find(user => user.email === email)
   }
 

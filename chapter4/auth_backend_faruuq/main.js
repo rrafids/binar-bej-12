@@ -3,11 +3,16 @@ const app = express();
 const PORT = 3000;
 
 // Import layers
-const UserRepository = require('./src/repository/user')
-const UserService = require('./src/service/user')
-const UserHandler = require('./src/handler/user')
+const UserRepository = require('./src/repository/user');
+const UserService = require('./src/service/user');
+const UserHandler = require('./src/handler/user');
+const logger = (req, res, next) => {
+  console.log(`${req.method} ${req.hostname}${req.url}`);
+  next();
+}
 
 app.use(express.json());
+app.use(logger);
 
 const userRepository = new UserRepository();
 const userService = new UserService(userRepository);

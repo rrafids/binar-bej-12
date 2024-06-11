@@ -6,9 +6,10 @@ class UserHandler {
   getAll = (req, res) => {
     const users = this.userService.getAll();
 
-    res.status(200).send({
-      users: users
-    });
+    // res.status(200).send({
+    //   users: users
+    // });
+    res.status(200).send(this.#responseToFE(true, { users: users }, null))
   }
 
   getByEmail = (req, res) => {
@@ -21,9 +22,15 @@ class UserHandler {
       statusCode = 404;
     }
 
-    res.status(statusCode).send({
-      user: user
-    });
+    // res.status(statusCode).send({
+    //   user: user
+    // });
+    if (statusCode === 200){
+      res.status(statusCode).send(this.#responseToFE(true, { user: user }, null))
+    } else {
+      res.status(statusCode).send(this.#responseToFE(false, null, "Empty"))
+    }
+    
   }
 
   #responseToFE = (isSuccess, data, errorMessage) => {
