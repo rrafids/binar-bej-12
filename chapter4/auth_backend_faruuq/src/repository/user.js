@@ -28,7 +28,7 @@ class UserRepository {
     return new Promise((resolve, reject) => {
       const existingUser = this.getByEmail(user.email)
       if (!existingUser) {
-        users.push(user)
+        this.users.push(user)
         resolve("Success")
       } else {
         reject('User exsited')

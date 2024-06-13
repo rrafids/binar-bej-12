@@ -77,8 +77,6 @@ class UserHandler {
     // gagal return 400
     const user = req.body
     const existingUser = this.userService.getByEmail(user.email)
-    console.log(">>> Existing user")
-    console.log(existingUser)
     if (existingUser && existingUser.password === user.password) {
       res.status(200).send(this.#responseToFE(true, existingUser, null))
     } else {
