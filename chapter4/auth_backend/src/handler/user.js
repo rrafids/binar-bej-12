@@ -9,7 +9,7 @@ class UserHandler {
 
   getAll(req, res) {
     const users = this.userService.getAll();
-
+    
     res.status(200).send({
       users: users
     });

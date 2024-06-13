@@ -1,11 +1,19 @@
 const express = require('express');
 const app = express();
-const PORT = 3000;
+const PORT = 8000;
 
-// Import layers
-const UserRepository = require('./src/repository/user')
-const UserService = require('./src/service/user')
-const UserHandler = require('./src/handler/user')
+// Import dependecy
+// Import repository
+const UserRepository = require('./src/repository/user');
+const ProductRepository = require('./src/repository/product');
+
+// Import service
+const UserService = require('./src/service/user');
+const ProductService = require('./src/service/product');
+
+// Import handler
+const UserHandler = require('./src/handler/user');
+const ProductHandler = require('./src/handler/product');
 
 app.use(express.json());
 
@@ -15,37 +23,38 @@ const userHandler = new UserHandler(userService);
 
 app.get('/users', userHandler.getAll);
 app.get('/users/:email', userHandler.getByEmail);
-
 app.post('/login', userHandler.login);
 app.post('/register', userHandler.register);
 
-// TODO:
-app.post('/products', productHandler.create);
-app.get('/products', productHandler.getAll);
+const productRepository = new ProductRepository();
+const productService = new ProductService(productRepository, userRepository);
+const productHandler = new ProductHandler(productService);
 
-// product {
-//   name: 'laptop macbook',
-//   price: 20000,
-//   user_email: 'hanvir@gmail.com'
-// }
-// 1. Buat sebuah endpoint baru untuk melakukan create product
-// 2. Buat sebuah endpoint baru untuk get all products data beserta data user yg terkait
-// 3. Format response (array of objects)
+// TODO:
+// Get products
 // [
 //  {
-//    name: 'asd',
+//    name: 'hp samsung',
 //    price: 20000,
 //    user: {
 //      name: "han vir",
 //      email: 'hanvir@gmail.com'
+//    },
+//    category: {
+//      name: "handphone"
 //    }
 //  }
 // ]
-// !clue: di service product -> bakal punya repository untuk product & user
+app.get('/products', productHandler.getAll);
+app.post('/products', productHandler.create);
 
 app.listen(PORT, function () {
   console.log(`Server berjalan pada http://localhost:${PORT}`);
 });
+
+// TODO:
+// app.get('/categories', productHandler.getAll);
+// app.post('/categories', productHandler.create);
 
 // Arsitektur Backend NodeJS
 // 3 layers:
