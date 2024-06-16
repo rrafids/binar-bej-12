@@ -23,6 +23,11 @@ class ProductHandler {
       message: createdProduct
     })
   }
+
+  updateById(req, res) {
+    const productId = req.params.id;
+    
+  }
 }
 
 module.exports = ProductHandler;
