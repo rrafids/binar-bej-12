@@ -9,7 +9,7 @@ class ProductService {
         var finalProducts = []
         if (allProducts.length > 0) {
             allProducts.forEach(product => {
-                const foundUser = this.userRepository.getByEmail(product.email)
+                const foundUser = this.userRepository.getByEmail(product.user_email)
                 console.log(foundUser)
                 if (foundUser) {
                     const validProduct = {
@@ -17,7 +17,7 @@ class ProductService {
                         price: product.price,
                         user: {
                             name: foundUser.name,
-                            email: foundUser.email
+                            email: foundUser.user_email
                         }
                     }
                     finalProducts.push(validProduct)
@@ -30,7 +30,7 @@ class ProductService {
     }
 
     register = (product) => {
-        const existingUser = this.userRepository.getByEmail(product.email)
+        const existingUser = this.userRepository.getByEmail(product.user_email)
         if (existingUser) {
             return(this.productRepository.createProduct(product))
         } else {
