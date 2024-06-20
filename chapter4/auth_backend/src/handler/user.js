@@ -9,7 +9,7 @@ class UserHandler {
 
   getAll(req, res) {
     const users = this.userService.getAll();
-    
+
     res.status(200).send({
       users: users
     });
@@ -44,11 +44,3 @@ class UserHandler {
 }
 
 module.exports = UserHandler;
-
-
-
-order = {
-  id,
-  user_id,
-  product_id / item_id
-}

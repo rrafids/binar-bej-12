@@ -1,26 +1,31 @@
 const products = [
   {
     id: 1,
-    name: "laptop macbook",
+    name: "laptop macbook 1",
     price: 1234124,
-    user_email: "adit@gmail.com",
-    category_code: "lp",
-    image: "binar.png"
+    user_id: 1,
+    category_id: 1
   },
   {
     id: 2,
-    name: "laptop windows",
+    name: "laptop macbook 2",
     price: 1234124,
-    user_email: "hanvir@gmail.com",
-    category_code: "lp",
-    image: "windows.png" // frontend: http://localhost:8000/windows.png
+    user_id: 1,
+    category_id: 1
   },
   {
     id: 3,
+    name: "laptop windows",
+    price: 1234124,
+    user_id: 2,
+    category_id: 1
+  },
+  {
+    id: 4,
     name: "hp samsung",
     price: 1234124,
-    user_email: "hanvir@gmail.com",
-    category_code: "hp"
+    user_id: 2,
+    category_id: 2
   }
 ];
 
@@ -35,9 +40,20 @@ class ProductRepository {
 
   insert(product) {
     this.products.push(product);
+    // insert to database
 
     return product;
   }
 }
 
 module.exports = ProductRepository;
+
+// begin
+// create commit
+// get commit
+// update commit
+// end
+
+// rollback kalo gagal
+
+// code selanjutnya

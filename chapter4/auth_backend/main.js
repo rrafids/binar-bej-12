@@ -58,8 +58,8 @@ const productHandler = new ProductHandler(productService);
 //    }
 //  }
 // ]
-// app.get('/products', productHandler.getAll);
-// app.post('/products', productHandler.create);
+app.get('/products', productHandler.getAll);
+app.post('/products', productHandler.create);
 // app.delete('/products/:id') // http://localhost:8000/products/1
 // app.put('/products/:id')
 
