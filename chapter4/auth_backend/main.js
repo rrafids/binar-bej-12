@@ -33,8 +33,10 @@ app.get('/images/binar.png', (req, res) => {
   res.sendFile(path.join(__dirname, '/assets/binar.png'));
 })
 
-app.get('/users', userHandler.getAll);
 app.get('/users/:email', userHandler.getByEmail);
+
+// TODO: 
+app.get('/users', userHandler.getAll);
 app.post('/login', userHandler.login);
 app.post('/register', userHandler.register);
 
@@ -63,10 +65,10 @@ app.post('/products', productHandler.create);
 // app.delete('/products/:id') // http://localhost:8000/products/1
 // app.put('/products/:id')
 
-// app.get('/categoris', productHandler.getAll);
-// app.post('/categoris', productHandler.create);
-// app.delete('/categoris/:id') // http://localhost:8000/categoris/1
-// app.put('/categoris/:id')
+// app.get('/categories', productHandler.getAll);
+// app.post('/categories', productHandler.create);
+// app.delete('/categories/:id') // http://localhost:8000/categories/1
+// app.put('/categories/:id')
 
 app.get('/codingan-error', (req, res) => {
   res.send(dataUser);

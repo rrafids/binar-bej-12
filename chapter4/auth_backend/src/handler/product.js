@@ -7,26 +7,25 @@ class ProductHandler {
     this.create = this.create.bind(this);
   }
 
-  getAll(req, res) {
-    const products = this.productService.getAll();
+  async getAll(req, res) {
+    const products = await this.productService.getAll();
 
     res.status(200).send({
       products: products
     });
   }
 
-  create(req, res) {
-    const product = req.body;
-    const createdProduct = this.productService.create(product);
+  async create(req, res) {
+    const productToCreate = req.body;
+    const createdProduct = await this.productService.create(productToCreate);
 
     res.status(201).send({
-      message: createdProduct
+      created_product: createdProduct
     })
   }
 
   updateById(req, res) {
     const productId = req.params.id;
-    
   }
 }
 

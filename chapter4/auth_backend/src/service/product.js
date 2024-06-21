@@ -4,23 +4,25 @@ class ProductService {
     this.userRepository = userRepository;
   }
 
-  getAll() {
-    // TODO: mengembalikan semua data product 
+  async getAll() {
+    const products = await this.productRepository.getAll();
+
+    return products
+  }
+
+  async create(product) {
+    const createdProduct = await this.productRepository.insert(product)
+
+    return createdProduct;
+  }
+
+  getAllOld() {
     // digabungkan dengan data user yang memiliki produk tersebut
     const products = this.productRepository.getAll();
     const productsUser = [];
 
     // Isi data productUser dengan products dan user yang sesuai
     for (let i = 0; i < products.length; i++) {
-      // buat objek baru sesuai format yang diminta
-      //  {
-      //    name: 'asd',
-      //    price: 20000,
-      //    user: {
-      //      name: "han vir",
-      //      email: 'hanvir@gmail.com'
-      //    }
-      //  }
       const user = this.userRepository.getByEmail(products[i].user_email);
 
       const productWithUser = {
@@ -36,12 +38,6 @@ class ProductService {
     }
 
     return productsUser;
-  }
-
-  create(product) {
-    this.productRepository.insert(product)
-
-    return "berhasil menambahkan product";
   }
 }
 
