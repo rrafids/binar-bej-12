@@ -1,0 +1,11 @@
+{
+  "name": "faruuq",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "main": "node main.js"
+  },
+  "author": "Faruuq",
+  "license": "ISC",
+  "description": ""
+}
