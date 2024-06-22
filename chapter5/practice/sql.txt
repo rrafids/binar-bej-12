@@ -1,0 +1,6 @@
+TODO:
+1. Buat sebuah database ecommerce
+2. Buat table users, categories & products (detail kolom sesuai data di repository)
+3. Insert 3 data ke tables users, categories & products (simpan DML)
+4. Update data users dengan id 2 (simpan DML)
+5. Delete data users dengan id 3 (simpan DML)
